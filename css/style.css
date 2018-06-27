@@ -1,0 +1,507 @@
+@charset "utf-8";
+
+body {
+	margin: 0px;
+	padding: 0px;
+	color: #333;	/*全体の文字色*/
+	font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+	font-size: 14px;	/*文字サイズ*/
+	line-height: 2;		/*行間*/
+	background: #fff;	/*背景色*/
+	-webkit-text-size-adjust: none;
+}
+
+body#top {
+	background: #fff url(../images/mainimg_s.jpg) no-repeat right top;	
+	background: #fff url(../images/mainimg_l.jpg) no-repeat right top/60%;
+}
+h1,h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size: 100%;}
+ul{list-style-type: none;}
+ol {padding-left: 40px;padding-bottom: 15px;}
+img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+iframe {width: 100%;}
+
+a {
+	color: #333;	/*リンクテキストの色*/
+}
+a:hover {
+	color: #e27000;			/*マウスオン時の文字色（全体）*/
+	text-decoration: none;	
+}
+
+header {
+	width: 100%;
+	background: #e27000;	/*背景色*/
+	position: fixed;	
+	height: 50px;	/*ヘッダーの高さ*/
+	-webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.4);	
+	box-shadow: 0px 0px 6px rgba(0,0,0,0.4);			/*同上*/
+    z-index: 100;
+}
+
+header #logo {
+	width: 130px;	/*ブロック幅*/
+	float: left;	/*左に回りこみ*/
+	padding: 10px;	/*ロゴブロック内の余白*/
+	background: #000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#333), to(#000));	
+	background: -webkit-linear-gradient(#333, #000);	/*同上*/
+	background: linear-gradient(#333, #000);			/*同上*/
+	-webkit-box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);			/*同上*/
+}
+
+.inner {
+	max-width: 980px;	/*幅*/
+	margin: 0 auto;
+}
+
+#menubar {
+	float: right;	/*右寄せ*/
+	margin-top: 11px;	
+}
+
+#menubar li {
+	float: left;	/*左に回りこみ*/
+	letter-spacing: 0.2em;
+}
+#menubar a {
+	display: block;
+	color: #fff;	/*文字色*/
+	text-decoration: none;
+	padding: 0px 20px;	
+	-webkit-transition: 0.5s;	/*マウスオン時の移り変わるまでの時間設定。0.5秒。*/
+	transition: 0.5s;			/*同上*/
+}
+
+#menubar a:hover {
+	color: #ffea00;	/*文字色*/
+}
+
+#menubar-s {
+	display: none;
+}
+
+#menubar_hdr {
+	display: none;
+}
+
+#menubar ul.ddmenu {
+	position:absolute;
+	visibility: hidden;
+}
+
+#menubar ul.ddmenu li {
+	float: none;
+}
+#menubar ul.ddmenu li a {
+	padding: 3px 0px 3px 10px;	
+	background: #000;	/*背景色*/
+	color: #fff;	/*文字色*/
+	width: 150px;	/*メニュー幅*/
+	margin-bottom: 5px;
+	margin-left: 15px;
+}
+
+#menubar ul.ddmenu li a:hover {
+	background: #333;	/*背景色*/
+	color: #ffea00;	/*文字色*/
+}
+
+.contents {
+	clear: both;
+	width: auto;
+	padding: 50px 0px;
+}
+
+.contents h2 {
+	clear: both;
+	margin-bottom: 15px;
+	color: #FFF;		/*文字色*/
+	background: #c86300;	
+	background: -webkit-gradient(linear, left top, left bottom, from(#e27000), to(#c86300));	
+	background: -webkit-linear-gradient(#e27000, #c86300);	
+	background: linear-gradient(#e27000, #c86300);			
+	padding: 5px 15px;	/*上下、左右への余白*/
+}
+
+.contents h2::first-letter {
+	border-left: 3px solid #fff;	
+	padding-left: 10px;	
+}
+
+.contents h3 {
+	clear: both;
+	margin-bottom: 15px;
+	background: #FFF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#ededed));
+	background: -webkit-linear-gradient(#FFF, #ededed);	
+	background: linear-gradient(#FFF, #ededed);			
+	padding: 4px 15px;	/*上下、左右への余白*/
+	border: 1px solid #bcbcbc;	/*枠線の幅、線種、色*/
+}
+
+.contents h3::first-letter {
+	border-left: 3px solid #000;	/*左側のアクセント用ラインの幅、線種、色*/
+	padding-left: 10px;	
+}
+
+.contents p {
+	padding: 0px 15px 14px;	/*上、左右、下への余白*/
+}
+.contents h2 + p,
+.contents h3 + p {
+	margin-top: -5px;
+}
+
+.contents section.list {
+	position: relative;
+	overflow: hidden;
+	background: #f6f4f0;	/*背景色*/
+	border: 1px solid #ccc;	/*枠線の幅、線種、色*/
+	margin-bottom: 15px;	
+}
+.contents section.list a {
+	text-decoration: none;
+	display: block;
+	overflow: hidden;
+	padding: 15px;	/*ボックス内の余白*/
+}
+
+.contents section.list a:hover {
+	background: #fff;	/*背景色*/
+}
+
+.contents section.list p {
+	padding: 0px;
+	margin-left: 24%;
+}
+
+.contents section.list figure img {
+	float: left;	/*画像を左へ回り込み*/
+	width: 20%;		/*写真の幅*/
+	padding: 0.5%;			/*余白*/
+	border: 1px solid #CCC;	/*枠線の幅、線種、色*/
+	background: #fff;	
+	margin-right: 3%;
+}
+
+.contents section.list h4 {
+	margin-left: 24%;
+	font-size: 18px !important;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #CCC;	/*下枠線の幅、線種、色*/
+}
+
+.contents section.list table {
+	font-size: 12px;	/*文字サイズ*/
+	background: #FFF;	/*背景色*/
+	width: 75%;
+	margin-bottom: 5px;
+}
+.contents section.list table,
+.contents section.list table td,
+.contents section.list table th{
+	border: 1px solid #bcbcbc;	/*枠線の幅、線種、色*/
+}
+.contents section.list table td,
+.contents section.list table th{
+	padding: 1%;	/*テーブル内の余白*/
+}
+
+.contents section.list table th{
+	width: 18%;		/*幅*/
+	text-align: center;		/*文字をセンタリング*/
+	font-weight: normal;
+	background: #dfe0c8;	/*背景色*/
+}
+/*説明ブロック*/
+.contents section.list table td {
+	width: 31%;	/*幅*/
+}
+
+.main {
+	float: right;	/*右に回りこみ*/
+	width: 700px;	/*メインコンテンツ幅*/
+	width: 73%;	/*メインコンテンツ幅*/
+}
+
+.sub {
+	float: left;	/*左に回りこみ*/
+	width: 230px;	/*サブコンテンツ幅*/
+	width: 23%;	/*サブコンテンツ幅*/
+}
+
+.sub h2 {
+	background: none;
+	margin-bottom: 0px;
+	color: #333;	/*文字色*/
+	padding: 0px 0px 10px;
+}
+
+.sub h2::first-letter {
+	border-left: 3px solid #b5b5b5;	/*左側のアクセント用ラインの幅、線種、色*/
+}
+
+.sub ul.submenu {
+	margin-bottom: 15px;	/*メニューブロックの下に空けるスペース*/
+	border-top: solid 1px #e4e4e4;	/*上の線の線種、幅、色*/
+}
+
+.sub ul.submenu li {
+	background: #fff;	/*背景色*/
+	border-bottom: solid 1px #e4e4e4;	/*下の線の線種、幅、色*/
+}
+.sub ul.submenu li a {
+	text-decoration: none;
+	display: block;
+	padding: 2px 10px;	/*メニュー内の余白。上下、左右への設定。*/
+}
+
+.sub .box1 {
+	padding: 15px;			/*ボックス内の余白*/
+	margin-bottom: 15px;	/*ボックスの下に空けるスペース*/
+	background: #f7f7f7;	/*背景色*/
+	border: solid 1px #e4e4e4;	/*線の線種、幅、色*/
+}
+
+.sub .box1 ul.submenu {
+	margin-bottom: 0px;
+}
+
+#new dl{
+	padding-left: 15px;
+}
+
+#new dt {
+	font-weight: bold;
+	float: left;
+	width: 8em;
+}
+
+#new dd {
+	padding-left: 8em;
+}
+
+footer {
+	clear: both;
+	text-align: center;
+	background: #e27000;	/*背景色*/
+	color: #fff;		/*文字色*/
+}
+footer .pr {
+	display: block;
+	font-size: 80%;
+}
+footer a {
+	text-decoration: none !important;
+	color: #fff;
+}
+
+#pagetop {
+	clear: both;
+	max-width: 980px;
+	margin: 0 auto;
+	padding-top: 40px;
+}
+#pagetop a {
+	color: #FFF;		/*文字色*/
+	font-size: 20px;	/*文字サイズ*/
+	padding: 0px 30px;
+	background: #000;	/*背景色*/
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	float: right;
+	border-radius: 4px 4px 0px 0px;
+}
+/*マウスオン時*/
+#pagetop a:hover {
+	background-color: #666;	/*背景色*/
+	color: #FFF;			/*文字色*/
+}
+
+.newicon {
+	background: #F00;
+	color: #FFF;
+	font-size: 10px;
+	padding: 0px 5px;
+	border-radius: 2px;
+	margin: 0px 5px;
+}
+
+h1.type1 {
+	font-size: 80px;
+	line-height: 1.2;
+	letter-spacing: 0.1em;
+	margin-bottom: 30px;
+	padding-left: 15px;
+}
+
+.look {background: #000;border-radius: 4px;color: #fff;padding: 5px;}
+.mb15,.mb1em {margin-bottom: 15px;}
+.clear {clear: both;}
+ul.disc {padding: 0em 25px 1em;list-style: disc;}
+.color1 {color: #e27000;}
+.color2 {color: #ffffff;}
+.pr {font-size: 10px;}
+.wl {width: 96%;}
+.ws {width: 50%;}
+.c {text-align: center;}
+.r {text-align: right;}
+.bg1 {background: #ebe7e0;overflow: hidden;}
+.pt150 {padding-top: 150px !important;}
+.radioon a:hover {opacity: 0.8}
+
+@media screen and (max-width:980px){
+
+.inner {
+	width: auto;
+	margin: 0 10px;
+}
+
+.contents {
+	padding: 10px 0px;
+}
+
+#pagetop {
+	width: auto;
+	margin-right: 10px;
+}
+
+}
+
+@media screen and (max-width:800px){
+
+body#top {
+	background-image: url(../images/mainimg_s.jpg);background-repeat: no-repeat;background-position: right 80px;background-size: 65% auto;/*一部古いスマホ用*/
+	background: #fff url(../images/mainimg_s.jpg) no-repeat right 80px/60%;
+}
+
+header {
+	position: static;
+	height: 80px;	/*ヘッダーの高さ*/
+}
+
+#menubar-s {
+	display: block;
+	position: absolute;
+	top: 110px;	/*画面の上から110pxの場所に配置*/
+	left: 0px;	/*画面の左から0pxの場所に配置*/
+	width: 100%;
+	z-index: 102;
+	border-top: 1px solid #fff;	/*上の線の幅、線種、色*/
+}
+
+#menubar-s li {
+	float: left;
+	width: 50%;
+	border-bottom: 1px solid #fff;	/*下線の幅、線種、色*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+#menubar-s li:nth-child(even)  {
+	border-left: 1px solid #fff;	/*偶数番目のメニューのみ左側に線をいれる*/
+}
+#menubar-s a {
+	display: block;
+	height: 70px;		/*メニューの高さ*/
+	line-height: 70px;	/*メニューの高さ*/
+	text-decoration: none;
+	background: #000;				/*メニューの背景色（古いブラウザ用）*/
+	background: rgba(0,0,0,0.9);	/*メニューの背景色。0,0,0はrgbカラーでの黒の事、0.9は透明度90%の事。*/
+	color: #fff;		/*文字色*/
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+#menubar-s a::before {
+	content: "→";	/*「→」と入れる*/
+	padding-right: 10px;	/*「→」と文字の間に空ける余白*/
+	padding-left: 10px;
+}
+
+#menubar {
+	display: none;
+}
+
+#menubar_hdr {
+	display: block;
+	position: absolute;
+	top: 18px;		/*上から18pxの場所に配置*/
+	right: 10px;	/*右から10pxの場所に配置*/
+	width: 30px;	/*幅*/
+	border: 1px solid #FFF;	/*枠線の幅、線種、色*/
+	border-radius: 4px;	/*角丸のサイズ*/
+	padding: 12px 10px 5px;	/*上、左右、下へのボックス内余白*/
+    z-index: 101;
+}
+
+#menubar_hdr span {
+	display: block;
+	border-top: 2px solid #FFF;	/*枠線の幅、線種、色*/
+	border-radius: 2px;	/*角丸のサイズ*/
+	margin-bottom: 7px;	/*バー同士の余白*/
+}
+
+.main, .sub {
+	float: none;
+	width: auto;
+}
+
+h1.type1 {
+	font-size: 50px;
+}
+
+.pt150 {padding-top: 30px !important;}
+
+}
+
+@media screen and (max-width:480px){
+
+#menubar-s li {
+	float: none;
+	width: auto;
+}
+#menubar-s li:nth-child(even)  {
+	border-left: none;
+}
+
+.contents section.list p {
+	margin-left: 0;
+}
+
+.contents section.list figure img {
+	float: none;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.contents section.list h4 {
+	margin-left: 0;
+}
+
+.contents section.list table {
+	width: 100%;
+}
+
+section#new h2.open {
+	background: url(../images/btn_minus.png) no-repeat right center/34px 34px,linear-gradient(#e27000, #c86300);
+}
+section#new h2.close {
+	background: url(../images/btn_plus.png) no-repeat right center/34px 34px,linear-gradient(#e27000, #c86300);
+}
+
+h1.type1 {
+	font-size: 30px;
+}
+
+.ws {width: 92%;}
+.pt150 {padding-top: 30px !important;}
+
+}
