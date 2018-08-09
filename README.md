@@ -4,11 +4,11 @@
 
 **pc**
   
-![home](images/sc_usj_home_pc.png)
+![home](images/sc_fm_home_pc.png)
   
 **iphone**
   
-![home](images/sc_usj_home_iphone.png)
+![home](images/sc_fm_home_iphone.png)
 
 ## 概要
 
